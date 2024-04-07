@@ -1,0 +1,26 @@
+version: '3.4'
+
+services:
+  mssql:
+    image: "mcr.microsoft.com/mssql/server:latest"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Admin@123
+    volumes:
+      - mssqlvol:/var/opt/mssql
+  
+  portainer:
+    image: portainer/portainer-ce
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock 
+      - portainer_data:/data
+
+  obloo.api.server:
+    image: ${DOCKER_REGISTRY-}oblooapiserver
+    build:
+      context: .
+      dockerfile: src/Obloo.Api/Obloo.Api.Server/Dockerfile
+   
+volumes:
+  mssqlvol:
+  portainer_data:

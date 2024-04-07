@@ -1,0 +1,24 @@
+@Obloo.Api.Server_HostAddress = http://localhost:8080
+
+POST {{Obloo.Api.Server_HostAddress}}/auth/register
+Content-Type: application/json
+
+{
+  "firstName" : "Prabuddha",
+  "lastName" : "Jayawardhana",
+  "email": "admin@gmail.com",
+  "password" : "Admin@123"
+}
+
+###
+
+
+POST {{Obloo.Api.Server_HostAddress}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@gmail.com",
+  "password" : "Admin@123"
+}
+
+###
