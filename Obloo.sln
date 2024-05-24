@@ -26,7 +26,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "requests", "requests", "{65
 		requests\Obloo.Api.Auth.http = requests\Obloo.Api.Auth.http
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Obloo.UnitTests", "tests\Obloo.UnitTests\Obloo.UnitTests.csproj", "{9CA87340-E37C-42AD-9B51-470E4CA46C46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Obloo.UnitTests", "tests\Obloo.UnitTests\Obloo.UnitTests.csproj", "{9CA87340-E37C-42AD-9B51-470E4CA46C46}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

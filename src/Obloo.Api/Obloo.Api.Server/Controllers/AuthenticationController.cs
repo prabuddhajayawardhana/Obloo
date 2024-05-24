@@ -20,7 +20,7 @@ public sealed class AuthenticationController : ApiController
     public async Task<IActionResult> Register(RegisterRequest request, CancellationToken cancellationToken)
     {
         var command = new RegisterCommand(request.FirstName, request.LastName, request.Email, request.Password);
-        AuthenticationResult authResult = await sender.Send(command, cancellationToken);
+        var authResult = await sender.Send(command, cancellationToken);
 
         var response = new AuthenticationResponse(authResult.User.Id, authResult.User.FirstName, authResult.User.LastName, authResult.User.Email, authResult.Token);
 

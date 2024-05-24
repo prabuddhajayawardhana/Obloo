@@ -1,27 +1,19 @@
-import { ReactNode, memo } from 'react';
+import { ReactNode } from 'react';
 import { Footer, Header, Sidebar } from '.';
 
-type Props = {
+export type Props = {
   children?: ReactNode;
 };
 
 const LayoutRenderer = ({ children }: Props) => {
-  if (name == null)
-    return children as JSX.Element;
-
-  // const Layout = layoutRenderers[name];
-  // if (!Layout)
-  //   throw new Error(`Layout renderer "${name}" is not registered.`);
-
+  if (name == null) return children as JSX.Element;
   return (
     <div className="flex">
-    <Sidebar />
-    <Header />
-    <div className="flex-1">{children}</div>
-    <Footer />
-  </div>
-  )
+      <Sidebar />
+      <Header />
+      <div className="flex-1">{children}</div>
+      <Footer />
+    </div>
+  );
 };
-
-export default memo(LayoutRenderer);
-
+export default LayoutRenderer;
